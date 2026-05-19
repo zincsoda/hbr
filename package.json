@@ -1,8 +1,8 @@
 {
-  "name": "home-bus-routes",
+  "name": "hbr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://zincsoda.github.io/home-bus-routes",
+  "homepage": "https://zincsoda.github.io/hbr",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
