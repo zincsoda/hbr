@@ -23,10 +23,13 @@ A React application that displays real-time bus arrival information for KMB (Kow
 npm install
 ```
 
-2. Configure your routes (optional):
-   - Edit `src/routes.json` to add, remove, or modify routes
-   - Each route requires: `route`, `stop_id`, `service_type`, `direction`, `stopName`, `destination`, `routeName`, and `id`
-   - The default stop is "Wang Toi Shan"
+2. Configure routes (either option works):
+
+   **In the app:** click **Add route / stop**, fill route number, KMB stop ID, direction (outbound/inbound), labels, and destination filter (must match ETA `dest_en` for that direction). User-added rows persist in **`localStorage`** (`hbr_extra_routes`). Baseline rows still ship from `src/routes.json`.
+
+   **Or edit bundled defaults:** adjust `src/routes.json`:
+   - Each route typically needs `route`, `stop_id`, `service_type`, `bound` (or `direction` as `O`/`I`), `stopName`, `destination`, `routeName`, and `id`
+   - The default signage includes Wang Toi Shan / Lo Uk Tseun examples
 
 ### Running the Application
 
@@ -39,7 +42,9 @@ The React app will be available at `http://localhost:3000`
 
 ## Configuration
 
-To change the bus stop or add/remove routes, edit `src/routes.json`:
+Baseline routes ship in `src/routes.json`. For ad-hoc rows without rebuilding, use **Add route / stop** (saved separately in `localStorage` under `hbr_extra_routes`).
+
+Example row shape matching the JSON defaults:
 
 ```json
 [

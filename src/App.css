@@ -29,6 +29,7 @@
 .signage-time-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 24px;
   align-items: center;
   justify-content: center;
@@ -132,9 +133,9 @@
   flex: 1;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(0, 1fr);
   gap: 20px;
-  overflow: hidden;
+  overflow: auto;
   min-height: 0;
   max-height: 100%;
 }
@@ -393,6 +394,134 @@
   .arrival-badge {
     font-size: 11px;
     padding: 4px 7px;
+  }
+}
+
+.add-route-toggle {
+  margin-left: 8px;
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ecfdf5;
+  background: rgba(16, 185, 129, 0.35);
+  border: 1px solid rgba(16, 185, 129, 0.6);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+
+.add-route-toggle:hover {
+  background: rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+
+.add-route-form {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.add-route-intro {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.add-route-intro code {
+  padding: 1px 6px;
+  font-size: 0.92em;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.add-route-error {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(252, 165, 165, 0.45);
+  color: #fecaca;
+  font-size: 14px;
+}
+
+.add-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.add-route-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.add-route-field input,
+.add-route-field select {
+  padding: 10px 11px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+.add-route-field input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.add-route-field-span2 {
+  grid-column: span 2;
+}
+
+.add-route-actions {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-route-submit {
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0a2818;
+  background: #34d399;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.add-route-submit:hover {
+  filter: brightness(1.06);
+}
+
+@media (max-width: 600px) {
+  .add-route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-route-field-span2 {
+    grid-column: span 1;
+  }
+
+  .add-route-toggle {
+    width: 100%;
+    margin-left: 0;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .add-route-intro {
+    font-size: 14px;
   }
 }
 
